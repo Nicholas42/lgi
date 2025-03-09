@@ -7,13 +7,13 @@
 
 PREFIX = /usr/local
 HOST_OS = $(shell uname -s | tr A-Z a-z)
-LUA_VERSION=5.1
+LUA_VERSION=5.4
 LUA_LIBDIR = $(PREFIX)/lib/lua/$(LUA_VERSION)
 LUA_SHAREDIR = $(PREFIX)/share/lua/$(LUA_VERSION)
 
 PKG_CONFIG ?= pkg-config
 GINAME = gobject-introspection-1.0
-PKGS = $(GINAME) gmodule-2.0 libffi
+PKGS = $(GINAME) gmodule-2.0 libffi lua-$(LUA_VERSION)
 VERSION_FILE = version.lua
 
 LUA_LIB = -llua
